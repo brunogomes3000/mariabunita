@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Usuario
+from .models import Compra
 
 def index(request):
     return render(request,'index.html')
@@ -19,3 +20,10 @@ def usuarios(request):
 
 def login (resquest):
 	return render (resquest, 'login.html')
+
+def vendas (request):
+	vendas=Compras.objects.all()
+	context={
+'vendas':vendas
+}
+	return render (request, 'visuvendas.html', context)
