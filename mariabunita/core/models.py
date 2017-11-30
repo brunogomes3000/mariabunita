@@ -44,3 +44,8 @@ class Meta:
     verbose_name = 'Usuario'
     verbose_name_plural = 'Usuarios'
     ordering = ['-nome']
+
+class Sac (models.Model):
+    perguntas=models.CharField('Perguntas', max_length=3000)
+    resposta= models.CharField('Resposta', max_length=4000)
+    
