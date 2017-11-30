@@ -13,6 +13,6 @@ class UsuarioAdmin(admin.ModelAdmin):
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Tipo_Usuario)
 admin.site.register(Tipo_Produto)
-admin.site.register(Pordutos)
+admin.site.register(Produtos)
 admin.site.register(Compra)
 admin.site.register(Compra_Produtos)
