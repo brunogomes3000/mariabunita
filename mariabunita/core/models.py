@@ -21,6 +21,12 @@ class Usuario(models.Model):
     def __str__(self):
         return self.nome
 
+    class Meta:
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'
+        ordering = ['-nome']
+
+
 class Tipo_Produto(models.Model):
     descricao = models.CharField('Descrição', max_length=100)
 
@@ -40,12 +46,16 @@ class Compra_Produtos(models.Model):
     produtos = models.ForeignKey(Produtos, on_delete=models.CASCADE)
 
 
-class Meta:
-    verbose_name = 'Usuario'
-    verbose_name_plural = 'Usuarios'
-    ordering = ['-nome']
-
-class Sac (models.Model):
-    perguntas=models.CharField('Perguntas', max_length=3000)
-    resposta= models.CharField('Resposta', max_length=4000)
     
+class Sac (models.Model):
+    perguntas=models.CharField('Perguntas', max_length=500)
+    resposta= models.CharField('Resposta', max_length=4000)
+
+    def __str__(self):
+        return self.perguntas
+
+    class Meta:
+        verbose_name='Sac'
+        verbose_name_plural= 'Sac'
+
+
