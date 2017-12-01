@@ -30,22 +30,29 @@ class Usuario(models.Model):
 class Tipo_Produto(models.Model):
     descricao = models.CharField('Descrição', max_length=100)
 
+    def __str__(self):
+        return self.descricao
+
 class Produtos(models.Model):
     nome = models.CharField('Nome', max_length=100)
     preco = models.DecimalField('Preço', max_digits=8, decimal_places=2)
     descri = models.CharField('Descrição', max_length=100)
     tipo_produto = models.ForeignKey(Tipo_Produto, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nome
 
 class Compra(models.Model):
     data_Compra = models.DateTimeField(auto_now_add=True)
     usuario = models.ForeignKey(Usuario , on_delete=models.CASCADE)
+def __str__(self):
+        return self.data_Compra
    
 class Compra_Produtos(models.Model):
     qtd = models.CharField('Quantidade', max_length=100)
     compra = models.ForeignKey(Compra, on_delete=models.CASCADE)
     produtos = models.ForeignKey(Produtos, on_delete=models.CASCADE)
-
-
+    def __str__(self):
+        return self.produtos
     
 class Sac (models.Model):
     perguntas=models.CharField('Perguntas', max_length=500)
