@@ -27,7 +27,7 @@ def login (resquest):
 
 
 def sac( resquest):
-	sac= Curso.objects.all()
+	sac= Sac.objects.all()
 	context = {
 	'sac' : sac
 	}
