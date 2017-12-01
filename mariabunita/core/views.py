@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Usuario
+from.models import Sac 
 
 def index(request):
     return render(request,'index.html')
@@ -19,3 +20,10 @@ def usuarios(request):
 
 def login (resquest):
 	return render (resquest, 'login.html')
+
+def sac( resquest):
+	sac= Curso.objects.all()
+	context = {
+	'sac' : sac
+	}
+	return render(requesr, 'sac.html', context)
