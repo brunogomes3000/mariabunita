@@ -1,0 +1,18 @@
+{%block conteudo%}
+<h1 class="centered">Lista de Sac </h1><br/>
+<div class="container">
+<div class="row mt">
+
+{%for sac in sac%}
+
+<div class="col-lg-4">
+
+<h3>{{sac.perguntas}}</h3>
+<p>{{sac.resposta}}</p>
+</div>
+
+{%endfor%}
+
+</div>
+</div>
+{%endblock%}
