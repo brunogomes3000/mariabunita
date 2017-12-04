@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Usuario
-
-from.models import Sac 
-
+from .models import Sac 
 from .models import Compra
+from .models import Cadastro
 
 
 def index(request):
@@ -39,4 +38,8 @@ def vendas (request):
         'vendas':vendas
     }
 	return render (request, 'visuvendas.html', context)
+
+
+def cadastro (request):
+    return render(request, 'cadastro.html')
 
