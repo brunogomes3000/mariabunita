@@ -8,8 +8,8 @@ from.models import Compra_Produtos
 from.models import Sac
 
 class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ['nome', 'cpf', 'imagem_perfil', 'telefone', 'logradouro', 'numero','complemento' , 'usuario', 'senha', 'tipo_usuario']
-	search_fields = ['nome', 'cpf', 'imagem_perfil', 'telefone', 'logradouro', 'numero','complemento' , 'usuario', 'senha', 'tipo_usuario']
+    list_display = ['nome','cpf']
+	search_fields = ['nome','cpf']
 
 class Tipo_UsuarioAdmin(admin.ModelAdmin):
 	search_fields = ['descricao']
