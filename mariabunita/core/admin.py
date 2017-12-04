@@ -10,6 +10,7 @@ from.models import Sac
 class UsuarioAdmin(admin.ModelAdmin):
     list_display = ['nome', 'cpf']
     search_fields = ['nome', 'cpf']
+    
 
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Tipo_Usuario)
