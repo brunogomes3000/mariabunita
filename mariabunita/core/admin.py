@@ -11,6 +11,13 @@ class UsuarioAdmin(admin.ModelAdmin):
     list_display = ['nome', 'cpf']
     search_fields = ['nome', 'cpf']
 
+class Tipo_UsuarioAdmin(admin.ModelAdmin):
+	search_fields = ['descricao']
+
+
+
+
+
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Tipo_Usuario)
 admin.site.register(Tipo_Produto)

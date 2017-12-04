@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from .models import Usuario
 from .models import Sac 
 from .models import Compra
-from .models import Cadastro
 
 
 def index(request):
