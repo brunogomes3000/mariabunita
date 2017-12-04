@@ -40,6 +40,6 @@ def vendas (request):
 	return render (request, 'visuvendas.html', context)
 
 
-def cadastro (request)
+def cadastro (request):
     return render(request, 'cadastro.html')
-    
+
