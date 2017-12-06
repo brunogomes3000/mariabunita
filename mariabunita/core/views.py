@@ -6,7 +6,12 @@ from .models import Compra
 
 
 def index(request):
+    sac= Sac.objects.all().order_by ('-id')[:3] 
     return render(request,'index.html')
+    context = {
+    'sac': sac
+    }
+
 def contato(request):
     return render (request, 'contato.html')
 def sobre(request):
