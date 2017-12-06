@@ -6,16 +6,14 @@ from .models import Compra
 
 
 def index(request):
-    sac= Sac.objects.all().order_by ('-id')[:3] 
     return render(request,'index.html')
-    context = {
-    'sac': sac
-    }
 
 def contato(request):
     return render (request, 'contato.html')
+
 def sobre(request):
     return render (request, 'sobre.html')
+
 def usuarios(request):
     usuarios = Usuario.objects.all()
     context = {
@@ -25,16 +23,20 @@ def usuarios(request):
 # Create your views here.
 
 
-def login (resquest):
+def login (request):
 	return render (resquest, 'login.html')
 
 
-def sac( resquest):
+def sac(request):
 	sac= Sac.objects.all()
 	context = {
 	'sac' : sac
 	}
-	return render(requesr, 'sac.html', context)
+	return render(request, 'sac.html', context)
+
+def curso_detalhes(request):
+    return render (resquest, 'curso_detalhes.html')
+
 
 def vendas (request):
 	vendas=Compras.objects.all()

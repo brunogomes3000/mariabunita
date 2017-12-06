@@ -54,7 +54,7 @@ class Compra_Produtos(models.Model):
     def __str__(self):
         return self.produtos
     
-class Sac (models.Model):
+class Sac(models.Model):
     perguntas=models.CharField('Perguntas', max_length=500)
     resposta= models.CharField('Resposta', max_length=4000)
 
