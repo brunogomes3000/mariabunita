@@ -5,47 +5,6 @@
     Author URL: https://bootstrapmade.com
 */
 
-.navbar1-fixed-top .container {
-/* Uncomment to make nav expand full width */
- /* width: auto; */
-}
-.navbar1 .brand {
-    margin-left:150;
-    padding: 0;
-    margin-top: 1.05em;
-}
-.navbar1 .brand a {
-    padding: 0;
-    color: #fff;
-    font-size: 1.75em;
-    margin-left: 0;
-    font-weight: 400;
-    text-transform:uppercase;
-}
-.navbar1 .brand a:hover {
-    text-decoration: none;
- transition: color .15s linear;
- -webkit-transition: color .15s linear;
- -moz-transition: color .15s linear;
-}
-.navbar1 .brand a:focus {
-    outline: none;
-}
-.navbar1-inner {
-    min-height: 4.75em;
-}
-.navbar1-inverse .navbar1-inner {
-    background-repeat: repeat;
-    background-color: #0b333f;
-}
-.navbar1-wrapper {
-    overflow:hidden;
-}
-
-
-
-
-
 .navbar-fixed-top .container {
 /* Uncomment to make nav expand full width */
  /*	width: auto; */
@@ -238,6 +197,7 @@ banner
 	position: relative;
 }
 .bg-color{
+	background-color: RGBA(13, 70, 83, 0.78);
 	min-height: 650px;
 }
 .banner-info{
