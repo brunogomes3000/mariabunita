@@ -38,8 +38,8 @@ def curso_detalhes(request):
     return render (resquest, 'curso_detalhes.html')
 
 
-def Compras (request):
-	vendas=Compras.objects.all()
+def visuvendas (request):
+	vendas=Compra.objects.all()
 	context={
         'visuvendas':vendas
     }
