@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+
+Detalhe do Curso | {{ block.super }}
+{% endblock %}
+{% block conteudo %}
+
+​​	<div class="container">
+		<div class="row mt">
+			<div class="col-lg-8"><h1>Nome do Curso</h1><hr>
+				<h3><b>DESCRIÇÃO</b></h3><p>Descrição do Curso.</p><br>
+				<h3><b>AUTOR</b></h3>
+				<p>Nome</p>
+				<p>Perfil</p>
+				<br>
+				<h3><b>ÁREA</b></h3>
+				<p>Área</p>
+				<br>
+				<h3><b>PÚBLICO-ALVO</b></h3>
+				<ul>
+				<li>PúblicoAlvo.</li>
+				</ul>
+				<br>
+				<h3><b>DATA DE INÍCIO</b></h3>
+				<p>Data.</p>
+				<br>
+				<h3><b>VAGAS</b></h3>
+				<p>X vagas.</p>
+			</div><!-- col-lg-8 -->
+			<div class="col-lg-4">
+				<img src="imagem.png" width="80%" height="80%"><br/><br/>
+				<a href="inscricao.html"><button type="button" class="btn btn-green">Inscrição</button></a>
+			</div>
+		</div>
+		<div class="row mt">
+		<hr>
+		<p>Data de Criação do Curso: xx/xx/xxxx</p>
+		<p>Última modificação: xx/xx/xxxx</p>
+	</div>
+</div>
+
+{% endblock %}
