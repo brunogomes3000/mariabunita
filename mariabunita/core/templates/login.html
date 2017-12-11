@@ -4,14 +4,35 @@
 
 {% block titulo %}
 Longin | {{ block.super }}
+
 <h1 class="centered">Autenticação</h1><br />
 <hr/>
 <div class="container">
 <div class="row mt">
-<form action="" method="post">
+{% if form.erros %}
+<div class="alert alert-danger">
+<p> Usuário ou senha inválida.Tente novamente.</p>
+</div>
+{% endif %}
+{% if next %}
+<div class="alert alert-danger">
+{% if user.is_authenticated %}
+<p> Sua conta não tem permissão para acessasr esta página. Realize o login com outra conta. </p>
+{% else %}
+<p> Realize o longin para acessar esta página. </p>
+{% endif %}
+</div>
+{% endif %}
+<form action="{%url 'login' %}" method="post">
+
 {% csrf_token %}
+
 <p>Login:<input type="text" name="login"/></p>
 <p>Senha:<input type="password" name="senha"/></p>
+
+
+<p> {{form.username.label}}: {{ form.username }} </p>
+<p> {{form.password.label}}: {{ form.password }} </p>
 <p><input type="submit" value="Enviar" /></p>
 </form>
 </div>
