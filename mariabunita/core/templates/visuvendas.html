@@ -6,9 +6,9 @@
 {%for curso in cursos%}
 
 <div class="col-lg-4">
-<img class="img-responsive" src="{%static'assets/img/post01.jpg'%}"alt="">
-<h3><a href="#">Venda 1</a></h3>
-<p><a href="#"><i class="fa fa-link"></i>Saiba mais</a></p><br/>
+<img class="img-responsive" src=""alt="">
+<h3><a href="{% url 'visuvendas_detalhes' %}">Venda 1</a></h3>
+<p><a href="{% url 'visuvendas_detalhes' %}"><i class="fa fa-link"></i>Saiba mais</a></p><br/>
 </div>
 
 {%endfor%}

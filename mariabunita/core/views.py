@@ -38,12 +38,15 @@ def curso_detalhes(request):
     return render (resquest, 'curso_detalhes.html')
 
 
-def vendas (request):
-	vendas=Compras.objects.all()
+def visuvendas (request):
+	vendas=Compra.objects.all()
 	context={
-        'vendas':vendas
+        'visuvendas':vendas
     }
 	return render (request, 'visuvendas.html', context)
+
+def visuvendas_detalhes(request):
+    return render(request, 'visuvendas_detalhes.html')
 
 
 def cadastro (request):
