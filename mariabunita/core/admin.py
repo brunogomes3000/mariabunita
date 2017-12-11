@@ -10,13 +10,13 @@ from.models import Sac
 class UsuarioAdmin(admin.ModelAdmin):
 	list_display = ['nome','cpf']
 	search_fields = ['nome','cpf']
-
+    
 class Tipo_UsuarioAdmin(admin.ModelAdmin):
 	search_fields = ['descricao']
 
 class Tipo_ProdutoAdmin(admin.ModelAdmin):
 	search_fields = ['descricao']
-
+	lister_filter = ['lábios' , 'face', 'olhos' , 'pincel']
 class ProdutosAdmin(admin.ModelAdmin):
 	list_display = ['nome', 'preco', 'descri']
 	search_fields = ['nome', 'preco', 'descri']
