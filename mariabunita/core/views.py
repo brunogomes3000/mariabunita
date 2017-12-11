@@ -49,3 +49,6 @@ def vendas (request):
 def cadastro (request):
     return render(request, 'cadastro.html')
 
+def usuario(request):
+    return render (request, 'usuario.html')
+
