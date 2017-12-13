@@ -12,9 +12,8 @@ urlpatterns = [
 	url(r'^cadastro/$', views.cadastro,name="cadastro"),
 	url(r'^admin/', admin.site.urls),
 	url(r'^usuario/$', views.usuario, name="usuario"),
-	url(r'^login/$', login, {'template_name': 'login.html'},
-	name="login"),
-	#url(r'^sair/$', logout, {'next_page': '/', name="logout"}),
+	url(r'^login/$', login, {'template_name': 'login.html'}, name="login"),
+	url(r'^sair/$', logout, {'next_page': '/'}, name="logout"),
 		
 ]
 
