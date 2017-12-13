@@ -64,6 +64,11 @@ def cadastro (request):
             user = user_post.save(commit=False)
             user.set_password(user_post.cleaned_data['password'])
             user.save()
+            if form2.is_valid():
+                usuario_post = UsuarioModelForm(request.POST)
+                usuario = usuario_post.save(commit=False)
+                usuario.user = user
+                usuario.save()
             form.save()
     return redirect('/cadastro')
     return render(request, 'cadastro.html')

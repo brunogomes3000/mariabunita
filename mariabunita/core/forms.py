@@ -5,7 +5,6 @@ class UsuarioModelForm(forms.ModelForm):
 	class Meta:
 		model = Usuario
 		fields = ['nome', 'perfil', 'imagem_perfil', 'celular']
-		
 			user.save()
 
 			grupo = Group.objects.get(name='Usuarios')
