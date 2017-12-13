@@ -6,6 +6,7 @@ from .models import Compra
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UsuarioModelForm
+from django.contrib.auth.models import Group
 
 def index(request):
     return render(request,'index.html')
@@ -55,7 +56,7 @@ def cadastro (request):
     form = UserCreationForm(request.POST or None)
     form2 = UsuarioModelForm(request.POST or None)
     context = {
-        'form': form
+        'form': form,
         'form2': form2
     }
     if request.method == 'POST':
@@ -64,11 +65,15 @@ def cadastro (request):
             user = user_post.save(commit=False)
             user.set_password(user_post.cleaned_data['password'])
             user.save()
+            grupo = Group.objects.get(name='Usuarios')
+            grupo.user_set.add(user)
             if form2.is_valid():
                 usuario_post = UsuarioModelForm(request.POST)
                 usuario = usuario_post.save(commit=False)
                 usuario.user = user
-                usuario.save()
+                usuario.save()                                                                           
+
+
             form.save()
     return redirect('/cadastro')
     return render(request, 'cadastro.html')
