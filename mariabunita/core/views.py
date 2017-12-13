@@ -55,8 +55,8 @@ def cadastro (request):
     form = UserCreationForm(request.POST or None)
     form2 = UsuarioModelForm(request.POST or None)
     context = {
-        'form': form
-        'form2': form2
+        'form': form,
+        'form2': form2,
     }
     if request.method == 'POST':
         if form.is_valid():
