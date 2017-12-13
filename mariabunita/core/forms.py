@@ -1,13 +1,10 @@
-from django.contrib.auth.models import Group
+from django import forms
+from django.forms import ModelForm
 from .models import Usuario
 
 class UsuarioModelForm(forms.ModelForm):	
 	class Meta:
 		model = Usuario
-		fields = ['nome', 'perfil', 'imagem_perfil', 'celular']
-			user.save()
-
-			grupo = Group.objects.get(name='Usuarios')
-			grupo.user_set.add(user)
-
-			if form2.is_valid():
+		fields = ['cpf','nome','imagem_perfil','telefone','numero', 'logradouro', 'complemento','usuario','senha', 'tipo_usuario','user']
+			
+			
