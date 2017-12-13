@@ -57,6 +57,10 @@ def cadastro (request):
     }
     if request.method == 'POST':
         if form.is_valid():
+            user_post = UserCreationForm(request.POST)
+            user = user_post.save(commit=False)
+            user.set_password(user_post.cleaned_data['password'])
+            user.save()
             form.save()
     return render(request, 'cadastro.html')
     
