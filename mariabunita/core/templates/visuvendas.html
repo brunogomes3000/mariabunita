@@ -1,18 +1,25 @@
-{%block conteudo%}
-<h1 class="centered">Lista de Cursos FIC</h1><br/>
+% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+LISTA DE VENDAS | {{ block.super }}
+{%endblock %}
+
+{% block conteudo %}
+<h1 class="centered">Lista de vendas </h1><br/>
 <div class="container">
 <div class="row mt">
-
-{%for curso in cursos%}
-
 <div class="col-lg-4">
-<img class="img-responsive" src=""alt="">
-<h3><a href="{% url 'visuvendas_detalhes' %}">Venda 1</a></h3>
-<p><a href="{% url 'visuvendas_detalhes' %}"><i class="fa fa-link"></i>Saiba mais</a></p><br/>
-</div>
+{% for vendas1 in visuvendas %}
+
+
+
+<h3>{{vendas1.vendas}}</h3>
+
+<br />
 
 {%endfor%}
-
 </div>
 </div>
-{%endblock%}
+</div>
+{%endblock%}	

@@ -52,11 +52,13 @@
                                 {% else %}
                                 <li><a href="{% url 'logout' %}"><i class="glyphicon glyphicon-ban-circle"></i> Logout</a></li>
                                 <li><a href="{% url 'usuario' %}"><i class="glyphicon glyphicon-user"></i> Perfil</a></li>
-                                 <li><a href="{% url 'sac' %}"><i class="glyphicon glyphicon-user"></i> Perfil</a></li>
                                 {% endif %}
 
                                 
                                 <li><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho</li>
+
+                                <li><a href="{% url 'sac' %}"><i class="glyphicon glyphicon-comment"></i> SAC </a></li> 
+
                             </ul>
                         </div>
                         <div class="col-md-6">
