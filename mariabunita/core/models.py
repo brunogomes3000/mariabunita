@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Tipo_Usuario(models.Model):
     descricao = models.CharField('Descrição', max_length=100)
@@ -17,7 +18,7 @@ class Usuario(models.Model):
     usuario = models.CharField('Usuario' , max_length=300)
     senha = models.CharField('Senha' , max_length=100)
     tipo_usuario = models.ForeignKey(Tipo_Usuario, on_delete=models.CASCADE)
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.nome
 

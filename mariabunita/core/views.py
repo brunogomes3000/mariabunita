@@ -5,6 +5,7 @@ from .models import Sac
 from .models import Compra
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from .forms import UsuarioModelForm
 
 def index(request):
     return render(request,'index.html')
@@ -52,8 +53,10 @@ def visuvendas_detalhes(request):
 
 def cadastro (request):
     form = UserCreationForm(request.POST or None)
+    form2 = UsuarioModelForm(request.POST or None)
     context = {
         'form': form
+        'form2': form2
     }
     if request.method == 'POST':
         if form.is_valid():
@@ -62,6 +65,7 @@ def cadastro (request):
             user.set_password(user_post.cleaned_data['password'])
             user.save()
             form.save()
+    return redirect('/cadastro')
     return render(request, 'cadastro.html')
     
 @login_required(login_url='login')
