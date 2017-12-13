@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -43,19 +44,31 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="topleft-info">
-                                <li><i class="fa fa-phone"></i> +62 088 999 123</li>
+                               
+                                {% if not user.is_authenticated %}
+
+                                <li><a href="{% url 'login' %}"<i class="glyphicon glyphicon-user"></i> Login</a></li>
+
+                                {% else %}
+                                <li><a href="{% url 'logout' %}"><i class="glyphicon glyphicon-ban-circle"></i> Logout</a></li>
+                                <li><a href="{% url 'usuario' %}"><i class="glyphicon glyphicon-user"></i> Perfil</a></li>
+
+                                {% endif %}
+
+                                
+                                <li><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
+
                             <div id="sb-search" class="sb-search">
                                 <form>
                                     <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
                                     <input class="sb-search-submit" type="submit" value="">
                                     <span class="sb-icon-search" title="Click to start searching"></span>
+
                                 </form>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -73,14 +86,8 @@
                     </div>
                     <div class="navbar-collapse collapse ">
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
-                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Home <i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="index.html">Home slider 1</a></li>
-                                    <li><a href="index2.html">Home slider 2</a></li>
-
-                                </ul>
-
+                            <li>
+                                <a href="{% url 'index' %}" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <i class="fa fa-angle-down"></i></a>
@@ -112,7 +119,8 @@
                                     <li><a href="post-leftsidebar.html">Post left sidebar</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{% url 'sac' %}">SAC</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -173,7 +181,7 @@
                     </div>
                     <div class="col-sm-3 col-lg-3">
                         <div class="widget">
-                            <h4>Newsletter</h4>
+                            <h4>"Newsletter</h4>
                             <p>Fill your email and sign up for monthly newsletter to keep updated</p>
                             <div class="form-group multiple-form-group input-group">
                                 <input type="email" name="email" class="form-control">
