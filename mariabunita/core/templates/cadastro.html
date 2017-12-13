@@ -1,1 +1,35 @@
-oiioiouuou
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+Cadastro | {{ block.super }}
+{% endblock %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo %}
+Cadastro | {{ block.super }}
+{% endblock %}
+{% block conteudo %}
+
+{% block conteudo %}
+
+<h1 class="centered">Cadastro de Usuário</h1><br />
+<hr/>
+<div class="container">
+<div class="row mt">
+
+<form action="{% url 'cadastro' %}" method="post">
+{% csrf_token %}
+
+
+<p>{{form.email.label}}: {{form.email}} </p>
+<p>{{form.username.label}}: {{form.username}} </p>
+<p>{{form.password1.label}}: {{form.password1}} </p>
+<p>{{form.password2.label}}: {{form.password2}} </p> 
+<p><input type="submit" value="Enviar" /></p>
+</form>
+</form>
+</div>
+</div>
+{% endblock %}
