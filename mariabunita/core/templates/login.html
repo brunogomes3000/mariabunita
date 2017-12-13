@@ -4,7 +4,9 @@
 
 {% block titulo %}
 Login | {{ block.super }}
+{% endblock %}
 
+{% block conteudo %}
 <h1 class="centered">Autenticação</h1><br />
 <hr/>
 <div class="container">
@@ -19,7 +21,7 @@ Login | {{ block.super }}
 {% if user.is_authenticated %}
 <p> Sua conta não tem permissão para acessasr esta página. Realize o login com outra conta. </p>
 {% else %}
-<p> Realize o longin para acessar esta página. </p>
+<p> Realize o login para acessar esta página. </p>
 {% endif %}
 </div>
 {% endif %}

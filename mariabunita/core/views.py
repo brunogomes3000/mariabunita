@@ -74,7 +74,6 @@ def cadastro (request):
     return render(request, 'cadastro.html')
     
 @login_required(login_url='login')
-
 def usuario(request):
     return render (request, 'usuario.html')
 

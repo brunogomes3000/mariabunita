@@ -10,10 +10,14 @@ urlpatterns = [
 	url(r'^visuvendas/$', views.visuvendas, name="visuvendas"), 
 	url(r'^visuvendas_detalhes/$', views.visuvendas_detalhes, name="visuvendas_detalhes"),
 	url(r'^cadastro/$', views.cadastro,name="cadastro"),
-	url(r'^admin/', admin.site.urls),
 	url(r'^usuario/$', views.usuario, name="usuario"),
 	url(r'^login/$', login, {'template_name': 'login.html'}, name="login"),
+<<<<<<< HEAD
 	#url(r'^sair/$', logout, {'next_page': '/', name="logout"}),
 		
+=======
+	url(r'^sair/$', logout, {'next_page': '/'}, name="logout"),
+	url(r'^admin/', admin.site.urls),		
+>>>>>>> 360c6b2d851d027e9fbceadbace731d5ddaa1b37
 ]
 
