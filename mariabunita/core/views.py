@@ -52,8 +52,7 @@ def visuvendas_detalhes(request):
     return render(request, 'visuvendas_detalhes.html')
 
 
-def cadastro (request):
-
+def cadastro(request):
     form = UserCreationForm(request.POST or None)
     form2 = UsuarioModelForm(request.POST or None)
     context = {
@@ -79,7 +78,7 @@ def cadastro (request):
 
             form.save()
             return redirect('/cadastro')
-    return render(request, 'cadastro.html')
+    return render(request, 'cadastro.html', context)
     
 @login_required(login_url='login')
 def usuario(request):

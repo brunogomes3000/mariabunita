@@ -14,6 +14,7 @@ class UsuarioAdmin(admin.ModelAdmin):
 class Tipo_UsuarioAdmin(admin.ModelAdmin):
 	search_fields = ['descricao']
 
+
 class Tipo_ProdutoAdmin(admin.ModelAdmin):
 	search_fields = ['descricao']
 	lister_filter = ['lábios' , 'face', 'olhos' , 'pincel']
