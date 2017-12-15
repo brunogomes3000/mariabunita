@@ -9,17 +9,18 @@ SAC | {{ block.super }}
 <<h1> <center>Dúvidas Frequentes </center></h1>
 <div class="container">
 <div class="row mt">
-<div class="col-lg-4">
+<div class="col-lg-12">
 {% for sac1 in sac %}
 
 
-<h3>{{sac1.perguntas}}</h3>
-<h5 style= " text-align: justify;">{{sac1.resposta}}</h5>
+<h3 class="teste" style="text-align: justify; "  >{{sac1.perguntas}}</h3>
+<h5 style= "text-align: justify;">{{sac1.resposta}}</h5>
+
 
 <br/>
 
 {%endfor%}
-<h3>Será uma satisfação sanar todas as suas dúvidas!</h3>
+<h3  style="text-align: justify;" >Será uma satisfação sanar todas as suas dúvidas! </h3>
 </div>
 </div>
 </div>
