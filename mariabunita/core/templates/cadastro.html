@@ -4,20 +4,18 @@
 {% block titulo %}
 Cadastro | {{ block.super }}
 {% endblock %}
-{% extends "base.html" %}
-{% load static %}
 
-{% block titulo %}
-Cadastro | {{ block.super }}
-{% endblock %}
-{% block conteudo %}
+
 
 {% block conteudo %}
+
 
 <h1 class="centered">Cadastro de Usuário</h1><br />
 <hr/>
 <div class="container">
 <div class="row mt">
+
+
 {% for field in form %}
 	{% if field.errors %}
         <div class="alert alert-danger">
@@ -35,11 +33,12 @@ Cadastro | {{ block.super }}
 {% endfor %}
 
 <form action="{% url 'cadastro' %}" method="post">
+
 {% csrf_token %}
 <h3>Dados de Autenticação</h3>
 
-<p>{{form.email.label}}: {{form.email}} </p>
-<p>{{form.username.label}}: {{form.username}} </p>
+<p>{{form.cpf.label}}: {{form.cpf}} </p>
+<p>{{form.nome.label}}: {{form.nome}} </p>
 <p>{{form.password1.label}}: {{form.password1}} </p>
 <p>{{form.password2.label}}: {{form.password2}} </p> 
 <h3>Dados Pessoais</h3>
@@ -55,4 +54,9 @@ Cadastro | {{ block.super }}
 </form>
 </div>
 </div>
+
+
+
+
+
 {% endblock %}

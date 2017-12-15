@@ -53,6 +53,7 @@ def visuvendas_detalhes(request):
 
 
 def cadastro (request):
+
     form = UserCreationForm(request.POST or None)
     form2 = UsuarioModelForm(request.POST or None)
     context = {
@@ -64,18 +65,20 @@ def cadastro (request):
             user_post = UserCreationForm(request.POST)
             user = user_post.save(commit=False)
             user.set_password(user_post.cleaned_data['password'])
+
             user.save()
+
             grupo = Group.objects.get(name='Usuarios')
             grupo.user_set.add(user)
+
             if form2.is_valid():
                 usuario_post = UsuarioModelForm(request.POST)
                 usuario = usuario_post.save(commit=False)
                 usuario.user = user
                 usuario.save()                                                                           
 
-
             form.save()
-    return redirect('/cadastro')
+            return redirect('/cadastro')
     return render(request, 'cadastro.html')
     
 @login_required(login_url='login')
