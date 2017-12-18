@@ -84,3 +84,6 @@ def cadastro(request):
 def usuario(request):
     return render (request, 'usuario.html')
 
+
+    
+
