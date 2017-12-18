@@ -1,12 +1,12 @@
-% extends "base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block titulo %}
-LISTA DE VENDAS | {{ block.super }}
+LISTA DE VENDAS |
 {%endblock %}
 
 {% block conteudo %}
-<h1 class="centered">Lista de vendas </h1><br/>
+<center><h1 class="centered">Lista de vendas </h1><center></h1><br/>
 <div class="container">
 <div class="row mt">
 <div class="col-lg-4">
@@ -14,7 +14,7 @@ LISTA DE VENDAS | {{ block.super }}
 
 
 
-<h3>{{vendas1.vendas}}</h3>
+<center><h3>{{vendas1.vendas}}</h3></center>
 
 <br />
 
