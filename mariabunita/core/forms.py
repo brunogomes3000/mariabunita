@@ -2,8 +2,6 @@ from django import forms
 from django.forms import ModelForm
 from .models import Usuario
 from django.contrib.auth.models import Group
-
-
 			user.save()
 
 			grupo = Group.objects.get(name='Usuarios')
