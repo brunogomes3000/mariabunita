@@ -3,7 +3,6 @@ from django.forms import ModelForm
 from .models import Usuario
 from django.contrib.auth.models import Group
 
-from django.contrib.auth.models import Group
 
 			user.save()
 
