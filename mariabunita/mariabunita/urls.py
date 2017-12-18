@@ -11,12 +11,12 @@ urlpatterns = [
 	url(r'^visuvendas/$', views.visuvendas, name="visuvendas"), 
 	url(r'^visuvendas_detalhes/$', views.visuvendas_detalhes, name="visuvendas_detalhes"),
 	url(r'^cadastro/$', views.cadastro,name="cadastro"),
+	url(r'^sucesso/$', views.sucesso,name="sucesso"),
 	url(r'^usuarios/$', views.usuarios, name="usuarios"),
 	url(r'^login/$', login, {'template_name': 'login.html'}, name="login"),
 	url(r'^sair/$', logout, {'next_page': '/'}, name="logout"),
 
 	url(r'^admin/', admin.site.urls),
-	url(r'^admin/', admin.site.urls),	
 
 	
 ]

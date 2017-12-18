@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UsuarioModelForm
 from django.contrib.auth.models import Group
+from django.shortcuts import redirect
+
 
 def index(request):
     return render(request,'index.html')
@@ -17,12 +19,13 @@ def contato(request):
 def sobre(request):
     return render (request, 'sobre.html')
 
+@login_required(login_url='login')
 def usuarios(request):
     usuarios = Usuario.objects.all()
     context = {
     'usuarios': usuarios
     }
-    return render(request, 'usuarios.html', context)
+    return render(request, 'usuario.html', context)
 # Create your views here.
 
 
@@ -63,12 +66,8 @@ def cadastro(request):
         if form.is_valid():
             user_post = UserCreationForm(request.POST)
             user = user_post.save(commit=False)
-            user.set_password(user_post.cleaned_data['password'])
-
+            user.set_password(user_post.cleaned_data['password1'])
             user.save()
-
-            grupo = Group.objects.get(name='Usuarios')
-            grupo.user_set.add(user)
 
             if form2.is_valid():
                 usuario_post = UsuarioModelForm(request.POST)
@@ -76,13 +75,11 @@ def cadastro(request):
                 usuario.user = user
                 usuario.save()                                                                           
 
-            form.save()
-            return redirect('/cadastro')
+            return redirect('/sucesso')
     return render(request, 'cadastro.html', context)
 
-@login_required(login_url='login')
-def usuario(request):
-    return render (request, 'usuario.html')
 
+def sucesso(request):
+    return render(request, 'sucesso.html')
 
     
