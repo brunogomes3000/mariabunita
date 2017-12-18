@@ -15,8 +15,6 @@ class Usuario(models.Model):
     logradouro = models.CharField('Logradouro', max_length=200)
     numero = models.CharField('Número', max_length=50)
     complemento = models.CharField('Complemento', max_length=200)
-    usuario = models.CharField('Usuario' , max_length=300)
-    senha = models.CharField('Senha' , max_length=100)
     tipo_usuario = models.ForeignKey(Tipo_Usuario, on_delete=models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
