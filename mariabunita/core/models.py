@@ -11,7 +11,7 @@ class Usuario(models.Model):
     cpf = models.CharField('CPF', primary_key=True, max_length=11)
     nome = models.CharField('Nome', max_length=100)
     imagem_perfil = models.ImageField( upload_to='imagens/perfil', verbose_name='Imagem', default='imagens/perfil/noperfil.png', null=True, blank=True)
-    telefone = models.CharField('Telefone', max_length=100)
+    telefone = models.CharField('Telefone', max_length=14)
     logradouro = models.CharField('Logradouro', max_length=200)
     numero = models.CharField('Número', max_length=50)
     complemento = models.CharField('Complemento', max_length=200)
