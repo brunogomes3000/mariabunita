@@ -80,3 +80,13 @@ def cadastro(request):
             return redirect('/cadastro')
     return render(request, 'cadastro.html', context)
     
+<<<<<<< HEAD
+=======
+@login_required(login_url='login')
+def usuario(request):
+    return render (request, 'usuario.html')
+
+
+    
+
+>>>>>>> dcf1077f7b9eec48654c45aa05e7e16e8ed5296b
