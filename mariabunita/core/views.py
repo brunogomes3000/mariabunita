@@ -79,7 +79,11 @@ def cadastro(request):
     return render(request, 'cadastro.html', context)
 
 
+@login_required(login_url='login')
+def usuario(request):
+    return render (request, 'usuario.html')
+
+
 def sucesso(request):
     return render(request, 'sucesso.html')
 
-    
