@@ -17,4 +17,3 @@ urlpatterns = [
 	url(r'^sair/$', logout, {'next_page': '/'}, name="logout"),
 	url(r'^admin/', admin.site.urls)
 	]
-	
