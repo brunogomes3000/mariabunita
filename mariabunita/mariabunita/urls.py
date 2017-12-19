@@ -17,7 +17,3 @@ urlpatterns = [
 	url(r'^sair/$', logout, {'next_page': '/'}, name="logout"),
 	url(r'^admin/', admin.site.urls)
 	]
-<<<<<<< HEAD
-=======
-	
->>>>>>> 5b23ed4f6df6c3f01a44bcccc96ff8b48f3620f7
