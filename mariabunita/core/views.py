@@ -94,4 +94,10 @@ def produtos (request) :
     return render (request, "produtos.html", context)
 
 def detalhes_produtos (request) :
-    return render (request, 'detalhes_produtos.html')
+    id_produto = request.GET.get ("id")
+    produto = Produtos.objects.get (id= id_produto)
+    context = {
+    'curso': curso
+
+    }
+    return render (request, 'detalhes_produtos.html', context)
