@@ -15,5 +15,7 @@ urlpatterns = [
 	url(r'^usuarios/$', views.usuarios, name="usuarios"),
 	url(r'^login/$', login, {'template_name': 'login.html'}, name="login"),
 	url(r'^sair/$', logout, {'next_page': '/'}, name="logout"),
+	url(r'^produtos/$', views.produtos, name="produtos"),
+	url(r'^detalhes_produtos/$', views.detalhes_produtos, name="detalhes_produtos"),
 	url(r'^admin/', admin.site.urls)
 	]

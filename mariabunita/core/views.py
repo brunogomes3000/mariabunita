@@ -85,10 +85,13 @@ def usuario(request):
 def sucesso(request):
     return render(request, 'sucesso.html')
 
-def Produtos (request) :
-    Produtos = Produtos.objects.all()
+def produtos (request) :
+    produtos = Produtos.objects.all()
     context = {
     'produtos': produtos
 
     }
     return render (request, "produtos.html", context)
+
+def detalhes_produtos (request) :
+    return render (request, 'detalhes_produtos.html')
