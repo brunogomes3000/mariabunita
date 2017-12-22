@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block conteudo %}
+ 
+
+        <section id="content">
+
+            <!-- Portfolio Projects -->
+            <div class="container marginbot50">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="heading">Favoritos</h4>
+
+
+                        <div id="grid-container" class="cbp-l-grid-projects">
+                            <ul>
+
+                            {% for curso in cursos %}
+                               
+
+
+                                <li class="cbp-item web-design logo">
+                                    <div class="cbp-caption">
+                                        <div class="cbp-caption-defaultWrap">
+                                            
+                                            <img src="{{ produto.imagem.url }}" alt="" />
+                                        
+                                        </div>
+                                        <div class="cbp-caption-activeWrap">
+                                            <div class="cbp-l-caption-alignCenter">
+                                                <div class="cbp-l-caption-body">
+                                                    <a href="{{ produto.nome }}" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="World Clock Widget<br>by Paul Flavius Nechita">Comprar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cbp-l-grid-projects-title">Base Timewise - MaryKay</div>
+                                    <div class="cbp-l-grid-projects-desc">Face</div>
+                                </li>
+
+                              {% endfor %} 
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- clients -->
+            
+        </section>
+{% endblock %}
+

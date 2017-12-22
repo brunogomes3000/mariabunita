@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import UsuarioModelForm
 from django.contrib.auth.models import Group
 from django.shortcuts import redirect
-
+from . models import Produtos
 
 def index(request):
     return render(request,'index.html')
@@ -40,8 +40,6 @@ def sac(request):
     }
     return render(request, 'sac.html', context)
 
-def curso_detalhes(request):
-    return render (resquest, 'curso_detalhes.html')
 
 
 def visuvendas (request):
@@ -87,3 +85,10 @@ def usuario(request):
 def sucesso(request):
     return render(request, 'sucesso.html')
 
+def Produtos (request) :
+    Produtos = Produtos.objects.all()
+    context = {
+    'produtos': produtos
+
+    }
+    return render (request, "produtos.html", context)
